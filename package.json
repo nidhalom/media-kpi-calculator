@@ -1,0 +1,14 @@
+{
+  "name": "media-kpi-calculator",
+  "version": "1.0.0",
+  "description": "Paid media KPI calculator: CTR, CPC, CPM, CPA, ROAS, break-even ROAS, max CPA and budget planning. Static site, no dependencies.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
