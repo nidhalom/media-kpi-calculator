@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Media KPI Calculator</title>
+    <meta name="description" content="Paid media KPI calculator: CTR, CPC, CPM, CPA, ROAS, break-even ROAS, max CPA and budget planning." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Media KPI Calculator</h1>
+      <p>Fill any fields you have. Each result appears as soon as its inputs are complete. Nothing is sent anywhere; all maths runs in your browser.</p>
+    </header>
+
+    <main class="layout">
+      <section class="card" aria-labelledby="funnel-title">
+        <h2 id="funnel-title">Campaign numbers</h2>
+        <form id="funnel-form" autocomplete="off" novalidate>
+          <label>Spend <input name="spend" type="number" min="0" step="any" inputmode="decimal" /></label>
+          <label>Impressions <input name="impressions" type="number" min="0" step="1" inputmode="numeric" /></label>
+          <label>Clicks <input name="clicks" type="number" min="0" step="1" inputmode="numeric" /></label>
+          <label>Conversions (purchases or leads) <input name="conversions" type="number" min="0" step="1" inputmode="numeric" /></label>
+          <label>Revenue <input name="revenue" type="number" min="0" step="any" inputmode="decimal" /></label>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="unit-title">
+        <h2 id="unit-title">Unit economics</h2>
+        <form id="unit-form" autocomplete="off" novalidate>
+          <label>Gross margin (%) <input name="marginPct" type="number" min="0" max="100" step="any" inputmode="decimal" /></label>
+          <label>Average order value <input name="averageOrderValue" type="number" min="0" step="any" inputmode="decimal" /></label>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="budget-title">
+        <h2 id="budget-title">Budget planner</h2>
+        <form id="budget-form" autocomplete="off" novalidate>
+          <label>Target purchases <input name="targetPurchases" type="number" min="0" step="1" inputmode="numeric" /></label>
+          <label>Known CPA <input name="cpa" type="number" min="0" step="any" inputmode="decimal" /></label>
+        </form>
+      </section>
+
+      <section class="card results" aria-labelledby="results-title" aria-live="polite">
+        <h2 id="results-title">Results</h2>
+        <dl id="results"></dl>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Formulas: CTR = clicks / impressions. CPM = spend / impressions x 1000. Break-even ROAS = 100 / margin %. Max CPA = average order value x margin %.</p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
